@@ -7,6 +7,7 @@ import { Profile } from "../Profile/Profile";
 import { Login } from "../Login/Login";
 import { Logout } from "../Logout/Logout";
 import { Error } from "../Error/Error";
+import Home from "../Home/Home";
 
 export function ExpenseManger() {
   return (
@@ -15,6 +16,7 @@ export function ExpenseManger() {
         <Header />
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/home/:userId" element={<Home />} />
           <Route path="/expenses" element={<Expenses />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
