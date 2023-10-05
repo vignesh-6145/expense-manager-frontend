@@ -1,13 +1,13 @@
+import { Link } from "react-router-dom";
 import "./Welcome.css";
 export function Welcome() {
   return (
     <div className="container">
       <span className="display-3 ">Welcome to Expense Manager</span>
       <br />
-      <a href="/Login" className="link-success">
-        {" "}
+      <Link to="/expenses" className="link-success">
         Goto Expenses
-      </a>
+      </Link>
     </div>
   );
 }
