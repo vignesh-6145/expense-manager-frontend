@@ -1,56 +1,29 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header } from "../Header/Header";
 import { Welcome } from "../Welcome/Welcome";
+import { Expenses } from "../Expenses/Expenses";
+import { Dashboard } from "../Dashboard/Dashboard";
+import { Profile } from "../Profile/Profile";
+import { Login } from "../Login/Login";
+import { Logout } from "../Logout/Logout";
+import { Error } from "../Error/Error";
 
 export function ExpenseManger() {
   return (
     <div className="container">
-      <header className="border-bottom border-light border-5 mb-5 p-2">
-        <div className="container">
-          <div className="row">
-            <nav className="navbar navbar-expand-lg">
-              <a className="navbar-brand ms-6 fs-2 fw-bold text-black" href="#">
-                Expense Manager
-              </a>
-              <div className="collapse navbar-collapse">
-                <ul className="navbar-nav">
-                  <li className="nav-item fs-5">
-                    <a className="nav-link" href="#">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item fs-5">
-                    <a className="nav-link" href="#">
-                      Expenses
-                    </a>
-                  </li>
-                  <li className="nav-item fs-5">
-                    <a className="nav-link" href="#">
-                      Dashboard
-                    </a>
-                  </li>
-                  <li className="nav-item fs-5">
-                    <a className="nav-link" href="#">
-                      Profile
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <ul className="navbar-nav">
-                <li className="nav-item fs-5">
-                  <a className="nav-link" href="#">
-                    Login
-                  </a>
-                </li>
-                <li className="nav-item fs-5">
-                  <a className="nav-link" href="#">
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-      <Welcome />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/expenses" element={<Expenses />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/login/vignesh" element={<Profile />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
