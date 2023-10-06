@@ -22,7 +22,7 @@ export function Login() {
     let loginStatus = authenticate(userName, password);
     setError(!loginStatus);
     setSuccess(loginStatus);
-    setTimeout(() => navigate("/home"), 5000);
+    setTimeout(() => navigate("/home/1"), 5000);
   }
   return (
     <div>
