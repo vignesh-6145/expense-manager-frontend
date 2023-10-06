@@ -2,6 +2,7 @@ import { useState } from "react";
 import { authenticate } from "../../Services/AuthService";
 import "./Login.css";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const [userName, setUsername] = useState("");
@@ -21,7 +22,7 @@ export function Login() {
     let loginStatus = authenticate(userName, password);
     setError(!loginStatus);
     setSuccess(loginStatus);
-    setTimeout(() => navigate("/"), 5000);
+    setTimeout(() => navigate("/home/1"), 5000);
   }
   return (
     <div>
@@ -35,7 +36,8 @@ export function Login() {
       {success && (
         <div className="col-sm-12 mb-4">
           <span className="alert alert-success">
-            please wait u will be redirected
+            please wait u will be redirected or{" "}
+            <Link to="/home">Click here</Link>
           </span>
         </div>
       )}
