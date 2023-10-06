@@ -7,7 +7,7 @@ import { Profile } from "../Profile/Profile";
 import { Login } from "../Login/Login";
 import { Logout } from "../Logout/Logout";
 import { Error } from "../Error/Error";
-import Home from "../Home/Home";
+import { Home } from "../Home/Home";
 
 export function ExpenseManger() {
   return (
