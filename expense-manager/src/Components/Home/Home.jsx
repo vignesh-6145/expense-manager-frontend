@@ -1,6 +1,6 @@
 import React from "react";
 import { getUser } from "../../Services/UserService";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export function Home() {
   const params = useParams();
@@ -27,7 +27,18 @@ class InternalHome extends React.Component {
   render() {
     return (
       <div>
-        <h1>Welcome {this.state.userId}</h1>
+        <h1 className="display-2">Welcome {this.state.userName}</h1>
+        <span className="text-sm-center">
+          Hope you are having a great financial year
+        </span>
+        <br />
+
+        <p class="m-5">
+          view my{" "}
+          <Link className="link-warning" to={`/expenses/${this.state.userId}`}>
+            expenses
+          </Link>
+        </p>
       </div>
     );
   }

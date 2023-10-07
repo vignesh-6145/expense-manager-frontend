@@ -17,7 +17,7 @@ export function ExpenseManger() {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/home/:userId" element={<Home />} />
-          <Route path="/expenses" element={<Expenses />} />
+          <Route path="/expenses/:userId" element={<Expenses />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
