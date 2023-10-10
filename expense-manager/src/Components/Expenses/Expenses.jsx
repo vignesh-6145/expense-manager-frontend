@@ -1,15 +1,8 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import { getExpenses, getUser } from "../../Services/UserService";
-import { ExpenseList } from "../ExpenseList/ExpenseList";
 
 export function Expenses() {
   const { userId } = useParams();
-  return (
-    <div className="container">
-      <InternalExpenses userId={userId} />
-    </div>
-  );
+  return <InternalExpenses userId={userId} />;
 }
 
 class InternalExpenses extends React.Component {

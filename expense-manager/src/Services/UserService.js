@@ -10,11 +10,10 @@ const headers = {
 };
 
 export function getUser(userId) {
-  console.log(`Call to getUser - ${userId}`);
+  console.log(userId);
   return client.get(`users/${userId}`, headers);
-}
-
-export function getExpenses(userId) {
-  console.log(`Call to getExpenses - ${userId}`);
-  return client.get(`users/${userId}/expenses`);
+  // return {
+  //   userId,
+  //   userName: "Vignesh",
+  // };
 }
