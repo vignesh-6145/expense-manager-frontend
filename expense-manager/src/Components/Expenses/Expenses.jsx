@@ -1,3 +1,7 @@
+import React from "react";
+import { getUser } from "../../Services/UserService";
+import { getExpenses } from "../../Services/ExpenseService";
+import { ExpenseList } from "../ExpenseList/ExpenseList";
 import { useParams } from "react-router-dom";
 
 export function Expenses() {
@@ -23,6 +27,7 @@ class InternalExpenses extends React.Component {
         this.setState({
           expenses: [...resp.data._embedded.expenseList],
         });
+        // console.log(resp.data._embedded.expenseList);
       })
       .catch((err) => console.log(err))
       .finally(console.log("done"));
