@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { ExpenseEntry } from "../ExpenseEntry/ExpenseEntry";
+import { summaryTotalAmount } from "../../Services/SummaryService";
 
 export function ExpenseList(props) {
   //   const ListItem = props.expenses.map((expense) => (
   //     <Expense key={expense.id} user={expense} />
   //   ));
+  const [sum, setSum] = useState(0);
+  const [label, setLabel] = useState("Label");
+  useEffect(() => {
+    summaryTotalAmount(props.userId).then((resp) => {
+      setSum(resp.data.statistic);
+      setLabel(resp.data.description);
+    });
+  }, []);
   return (
     <div>
       <table className="table">
@@ -25,8 +35,8 @@ export function ExpenseList(props) {
           ))}
           <tr>
             <th></th>
-            <th>Total Amount</th>
-            <td>{"<SUM>"}</td>
+            <th>{label}</th>
+            <td>{sum}</td>
             <td> </td>
           </tr>
         </tbody>

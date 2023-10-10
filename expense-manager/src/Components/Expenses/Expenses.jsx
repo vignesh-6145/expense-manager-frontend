@@ -1,15 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { getExpenses, getUser } from "../../Services/UserService";
+import { getUser } from "../../Services/UserService";
+import { getExpenses } from "../../Services/ExpenseService";
 import { ExpenseList } from "../ExpenseList/ExpenseList";
+import { useParams } from "react-router-dom";
 
 export function Expenses() {
   const { userId } = useParams();
-  return (
-    <div className="container">
-      <InternalExpenses userId={userId} />
-    </div>
-  );
+  return <InternalExpenses userId={userId} />;
 }
 
 class InternalExpenses extends React.Component {
@@ -30,6 +27,7 @@ class InternalExpenses extends React.Component {
         this.setState({
           expenses: [...resp.data._embedded.expenseList],
         });
+        // console.log(resp.data._embedded.expenseList);
       })
       .catch((err) => console.log(err))
       .finally(console.log("done"));

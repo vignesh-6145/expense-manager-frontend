@@ -19,3 +19,6 @@ export function updateExpense(userId, expense) {
 export function deleteExpense(userId, expenseId) {
   return client.delete(`users/${userId}/expenses/${expenseId}`, headers);
 }
+export function getExpenses(userId) {
+  return client.get(`users/${userId}/expenses`, headers);
+}
