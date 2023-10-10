@@ -44,7 +44,12 @@ class InternalExpenses extends React.Component {
           Hi {this.state.user.userName} you had {this.state.expenses.length}{" "}
           Expenses
         </h1>
-        <ExpenseList expenses={this.state.expenses} />
+        {this.state.expenses.length != 0 && (
+          <ExpenseList
+            expenses={this.state.expenses}
+            userId={this.state.user.userId}
+          />
+        )}
       </div>
     );
   }

@@ -8,6 +8,7 @@ import { Login } from "../Login/Login";
 import { Logout } from "../Logout/Logout";
 import { Error } from "../Error/Error";
 import { Home } from "../Home/Home";
+import { UpdateExpense } from "../UpdateExpense/UpdateExpense";
 
 export function ExpenseManger() {
   return (
@@ -18,6 +19,10 @@ export function ExpenseManger() {
           <Route path="/" element={<Welcome />} />
           <Route path="/home/:userId" element={<Home />} />
           <Route path="/expenses/:userId" element={<Expenses />} />
+          <Route
+            path="users/:userId/update/:expenseId"
+            element={<UpdateExpense />}
+          />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />

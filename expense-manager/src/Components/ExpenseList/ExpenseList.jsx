@@ -17,8 +17,18 @@ export function ExpenseList(props) {
         </thead>
         <tbody>
           {props.expenses.map((expense) => (
-            <ExpenseEntry key={expense.id} user={expense} />
+            <ExpenseEntry
+              key={expense.id}
+              expense={expense}
+              userId={props.userId}
+            />
           ))}
+          <tr>
+            <th></th>
+            <th>Total Amount</th>
+            <td>{"<SUM>"}</td>
+            <td> </td>
+          </tr>
         </tbody>
       </table>
     </div>
